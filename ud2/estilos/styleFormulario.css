@@ -103,6 +103,13 @@ button:hover {
     background-color: #FFD361;
     color: #570000;
 }
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}
 /* media */
 @media (max-width: 795px) {
     fieldset {

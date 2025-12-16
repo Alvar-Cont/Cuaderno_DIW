@@ -493,3 +493,9 @@ th {
   background-color: #4caf50;
   color: white;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}

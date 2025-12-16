@@ -92,3 +92,9 @@ img:hover{
 .dropShadow img:hover{
     filter: none;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}

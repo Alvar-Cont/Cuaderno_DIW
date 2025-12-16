@@ -78,4 +78,10 @@ body{
     left: 0px;
     z-index: 10;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}
 

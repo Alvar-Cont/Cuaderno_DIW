@@ -111,3 +111,9 @@ h2 {
 .tarjeta:hover .tarjeta-titulo {
   opacity: 0;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}

@@ -73,3 +73,9 @@ pre {
     border-left: 4px solid #4a7c59;
     line-height: 1.6;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}

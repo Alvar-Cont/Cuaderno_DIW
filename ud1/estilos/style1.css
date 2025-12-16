@@ -63,6 +63,12 @@ ul li {
 ul li:last-child {
   border-bottom: none;
 }
+footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 15px;
+    color: #9ca3af;
+}
 
 /* media */
 @media (max-width: 768px) {
