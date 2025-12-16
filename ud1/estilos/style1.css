@@ -12,6 +12,14 @@ body {
 }
 
 /* encabezado */
+header {
+  background: linear-gradient(90deg, #0a120d, #14532d, #0a120d);
+  color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  list-style: none;
+}
 h1 {
   text-align: center;
   color: #e60012;
@@ -64,10 +72,10 @@ ul li:last-child {
   border-bottom: none;
 }
 footer {
-    margin-top: auto;
-    text-align: center;
-    font-size: 15px;
-    color: #9ca3af;
+  margin-top: auto;
+  text-align: center;
+  font-size: 15px;
+  color: #9ca3af;
 }
 
 /* media */
