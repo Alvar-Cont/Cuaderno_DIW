@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Ejercicio 5</h2>
+
+    <video id="medio" width="720" height="400">
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+    </video>
+    
+    <nav>
+        <input type="button" id="reiniciar" value="reiniciar">
+        <input type="button" id="retrasar" value="&laquo;">
+        <input type="button" id="play" value="&#9658;">
+        <input type="button" id="adelantar" value="&raquo;">
+        <input type="button" id="silenciar" value="silenciar">
+        <label>Volumen</label>
+        <input type="button" id="menosVolumen" value="-">
+        <input type="button" id="masVolumen" value="+">
+    </nav>
+</body>
+</html>
+
+<script>
+    var medio=document.getElementById("medio");
+    var play=document.getElementById("play");
+    var adelantar=document.getElementById("adelantar");
+    var retrasar=document.getElementById("retrasar");
+    var silenciar=document.getElementById("silenciar");
+    var masVolumen=document.getElementById("masVolumen");
+    var menosVolumen=document.getElementById("menosVolumen");
+    var reiniciar=document.getElementById("reiniciar");
+
+    play.addEventListener("click", function(){
+        if(medio.paused){
+            medio.play();
+            play.value="||";
+        }
+        else{
+            medio.pause();
+            play.value="►";
+        }
+    });
+
+    adelantar.addEventListener("click", function(){
+        medio.currentTime+=5;
+    });
+
+    retrasar.addEventListener("click", function(){
+        medio.currentTime-=5;
+    });
+
+    silenciar.addEventListener("click", function(){
+        if(medio.muted){
+            medio.muted=false;
+            silenciar.value="silenciar";
+        }
+        else{
+            medio.muted=true;
+            silenciar.value="escuchar";
+        }
+    });
+
+    masVolumen.addEventListener("click", function(){
+        medio.volume+=0.1;
+    });
+
+    menosVolumen.addEventListener("click", function(){
+        medio.volume-=0.1;
+    });
+
+    reiniciar.addEventListener("click", function(){
+        medio.currentTime=0;
+    });
+</script>
