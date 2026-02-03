@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <canvas id="lienzo" width="500" height="300"></canvas>
+
+    <script>
+        let hoja = document.getElementById("lienzo");
+        let dibujo = hoja.getContext("2d");
+
+        dibujo.fillStyle = 'red';
+        dibujo.fillRect(0, 0, 300, 300);
+        dibujo.stroke()
+
+        // cuadraditos 
+        dibujo.fillStyle = 'white';
+        dibujo.fillRect(10, 10, 50, 50);
+        dibujo.fillRect(125, 125, 50, 50);
+        dibujo.fillRect(240, 240, 50, 50);
+        dibujo.stroke()
+    </script>
+</body>
+</html>

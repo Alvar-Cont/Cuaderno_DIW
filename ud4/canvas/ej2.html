@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <canvas id="lienzo" width="500" height="300"></canvas>
+    <script>
+        let hoja = document.getElementById("lienzo");
+        let dibujo = hoja.getContext("2d");
+        dibujo.lineWidth = 3;
+        dibujo.strokeStyle = "lightblue";
+        dibujo.strokeRect(50, 10, 200, 100);
+    </script>
+</body>
+</html>
