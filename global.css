@@ -1,0 +1,610 @@
+:root {
+    --bg-dark: #09090b; /* Zinc 950 - Fondo muy oscuro */
+    --bg-card: #18181b; /* Zinc 900 - Fondo tarjetas */
+    --text-primary: #f4f4f5; /* Texto principal casi blanco */
+    --text-secondary: #a1a1aa; /* Texto secundario grisáceo */
+
+    /* Gradientes Tech/Cyberpunk */
+    --accent-start: #6366f1; /* Indigo */
+    --accent-end: #ec4899; /* Pink */
+    --accent-glow: rgba(99, 102, 241, 0.5); /* Resplandor */
+
+    --border-color: #27272a; /* Bordes sutiles */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    /* Patrón de rejilla sutil para efecto 'blueprint' o 'tech' */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Efecto de luz ambiental en la parte superior */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
+    height: 500px;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    background: transparent;
+    padding: 5rem 1rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0;
+    line-height: 1.1;
+
+    /* Texto con gradiente moderno */
+    background: linear-gradient(135deg, #fff 30%, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    padding: 1rem;
+}
+
+/* --- ESTILOS DE CONTENIDO GENÉRICO (Actividades) --- */
+h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+strong {
+    color: var(--text-primary);
+}
+/* Imágenes responsivas por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+    display: block;
+}
+
+/* Enlaces normales de texto */
+a {
+    color: var(--accent-start);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+a:hover {
+    color: var(--accent-end);
+    text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Listas normales de contenido */
+ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- COMPONENTE: GRID DE TARJETAS (Menús Index) --- */
+.card-grid {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    /* Grid automático y responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+}
+.card-grid li {
+    margin: 0;
+}
+
+/* Tarjeta (Anteriormente 'a' global) */
+.card-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2.5rem 2rem;
+    box-sizing: border-box;
+
+    background: rgba(24, 24, 27, 0.6); /* Semi-transparente */
+    color: var(--text-primary); /* Override link color */
+    text-decoration: none;
+
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+
+    /* Efecto cristal esmerilado */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    text-shadow: none; /* Reset text shadow de enlace normal */
+}
+
+/* Decoración estilo código en la esquina de las tarjetas */
+.card-link::after {
+    content: '</>';
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    opacity: 0.2;
+    transition: all 0.3s ease;
+}
+
+/* Borde gradiente sutil a la izquierda */
+.card-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-start), var(--accent-end));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-link:hover {
+    transform: translateY(-8px) scale(1.01);
+    background: rgba(30, 30, 35, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px -10px var(--accent-glow);
+    color: var(--text-primary);
+}
+
+.card-link:hover::after {
+    color: var(--accent-end);
+    opacity: 1;
+    transform: rotate(10deg);
+}
+
+.card-link:hover::before {
+    opacity: 1;
+}
+
+/* Footer estilo terminal */
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    background: rgba(9, 9, 11, 0.95);
+}
+
+/* Clases de utilidad para mantener compatibilidad si existen */
+.contendorPadre { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+.contendor {
+    flex: 1;
+    min-width: 300px;
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+.boton {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    margin: 2rem auto;
+    background: var(--accent-start);
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    header { padding-top: 3rem; }
+    h1 { font-size: 2.5rem; }
+    main { width: 95%; padding: 0.5rem; }
+    .card-grid { grid-template-columns: 1fr; }
+    .card-link { padding: 1.5rem; font-size: 1.25rem; }
+    body { background-size: 20px 20px; }
+}
+
+/* Fix para el botón de volver para que no herede los estilos de tarjeta */
+.boton a {
+    display: block;
+    padding: 0;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    color: inherit;
+    font-size: inherit;
+    height: auto;
+}
+.boton a::after, .boton a::before {
+    display: none;
+}
+.boton a:hover {
+    transform: none;
+    background: none;
+    box-shadow: none;
+}
+
+/* Header simple para actividades (mismo estilo que index) */
+.page-actividad header {
+    background: transparent;
+    padding: 5rem 1rem 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.page-actividad header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0;
+    line-height: 1.1;
+
+    /* Mismo gradiente que los index */
+    background: linear-gradient(135deg, #fff 30%, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.3));
+}
+
+/* Navegación moderna tipo tabs */
+.nav-unidad {
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+    margin: 0 0 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+}
+
+.nav-unidad ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-unidad li {
+    margin: 0;
+}
+
+.nav-unidad a {
+    display: block;
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    font-size: 0.9rem;
+    height: auto;
+    color: var(--text-secondary);
+    backdrop-filter: none;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-unidad a:hover {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--text-primary);
+    transform: none;
+    box-shadow: none;
+    border-bottom-color: var(--accent-start);
+    text-shadow: none;
+}
+
+.nav-unidad a::after,
+.nav-unidad a::before {
+    display: none;
+}
+
+/* Contenido de actividades 100% responsivo */
+.page-actividad main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto 4rem;
+    padding: 3rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    color: #1f2937; /* Gray 800 */
+}
+
+.page-actividad h2 {
+    font-size: 2rem;
+    color: #111827; /* Gray 900 */
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb; /* Gray 200 */
+    padding-bottom: 0.5rem;
+}
+
+.page-actividad h3 {
+    font-size: 1.5rem;
+    color: #1f2937; /* Gray 800 */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-actividad p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #374151; /* Gray 700 */
+    font-size: 1.05rem;
+}
+
+.page-actividad strong {
+    color: #111827; /* Gray 900 */
+    font-weight: 700;
+}
+
+/* Imágenes 100% responsivas */
+.page-actividad img {
+    max-width: 100%;
+    height: auto !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    display: block;
+    border: none;
+}
+
+/* Enlaces en contenido */
+.page-actividad main a:not(.boton a) {
+    color: #4f46e5; /* Indigo 600 */
+    text-decoration: underline;
+    text-decoration-color: rgba(79, 70, 229, 0.3);
+    font-weight: 600;
+    transition: all 0.2s;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    display: inline;
+    height: auto;
+    font-size: inherit;
+    text-shadow: none;
+}
+
+.page-actividad main a:not(.boton a):hover {
+    color: #4338ca; /* Indigo 700 */
+    text-decoration-color: #4338ca;
+    text-shadow: none;
+    transform: none;
+    box-shadow: none;
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.page-actividad main a:not(.boton a)::after,
+.page-actividad main a:not(.boton a)::before {
+    display: none;
+}
+
+/* Listas en actividades */
+.page-actividad main ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #374151; /* Gray 700 */
+    list-style: disc;
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+.page-actividad main li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Tablas responsivas */
+.page-actividad table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: #ffffff;
+    border: 1px solid #e5e7eb; /* Gray 200 */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.page-actividad table thead {
+    background: #f9fafb; /* Gray 50 */
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.page-actividad table th,
+.page-actividad table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.page-actividad table th {
+    color: #111827;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.page-actividad table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 992px) {
+    .page-actividad header h1 {
+        font-size: 3rem;
+    }
+
+    .page-actividad main {
+        width: 92%;
+        padding: 0.75rem;
+    }
+
+    .nav-unidad a {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .page-actividad header {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .page-actividad header h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-unidad {
+        position: relative;
+    }
+
+    .nav-unidad ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        padding: 0 0.5rem;
+    }
+
+    .nav-unidad ul::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .nav-unidad ul::-webkit-scrollbar-track {
+        background: var(--bg-dark);
+    }
+
+    .nav-unidad ul::-webkit-scrollbar-thumb {
+        background: var(--border-color);
+        border-radius: 2px;
+    }
+
+    .nav-unidad a {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .page-actividad main {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .page-actividad h2 {
+        font-size: 1.4rem;
+    }
+
+    .page-actividad h3 {
+        font-size: 1.15rem;
+    }
+
+    .page-actividad p {
+        font-size: 0.95rem;
+    }
+
+    .page-actividad table {
+        font-size: 0.85rem;
+    }
+
+    .page-actividad table th,
+    .page-actividad table td {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+/* Responsivo para móviles pequeños */
+@media (max-width: 480px) {
+    .page-actividad header h1 {
+        font-size: 2rem;
+    }
+
+    .nav-unidad a {
+        padding: 0.65rem 0.75rem;
+        font-size: 0.75rem;
+    }
+
+    .page-actividad h2 {
+        font-size: 1.25rem;
+    }
+
+    .page-actividad h3 {
+        font-size: 1.05rem;
+    }
+}
+
