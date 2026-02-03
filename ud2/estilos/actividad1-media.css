@@ -2,8 +2,6 @@
 
 @media (max-width: 767px) {
     body {
-        background: linear-gradient(to right, #ffcccc, #ffe6e6);
-        color: white;
         min-height: 100vh;
         display: flex;
         justify-content: center;
@@ -61,7 +59,6 @@
 /* TABLET */
 @media (min-width: 768px) {
     body {
-        background: linear-gradient(to right, #99ffcc, #e6fff5);
         color: white;
         display: flex;
         min-height: 100vh;
@@ -130,7 +127,6 @@
 
 @media (min-width: 1024px) {
     body {
-        background: linear-gradient(to right, #99ffcc, #e6fff5);
         color: white;
         display: flex;
         justify-content: center;

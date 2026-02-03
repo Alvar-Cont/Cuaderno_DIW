@@ -50,6 +50,7 @@ header {
     padding: 5rem 1rem 3rem;
     text-align: center;
     position: relative;
+    z-index: 1000;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h1 {
 }
 
 main {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto 4rem;
     padding: 1rem;
@@ -286,7 +287,6 @@ footer {
     background: transparent;
     padding: 5rem 1rem 3rem;
     text-align: center;
-    position: relative;
 }
 
 .page-actividad header h1 {
@@ -310,7 +310,6 @@ footer {
     border-bottom: 1px solid var(--border-color);
     padding: 0;
     margin: 0 0 2rem 0;
-    position: sticky;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
@@ -348,7 +347,6 @@ footer {
     font-weight: 500;
     transition: all 0.25s ease;
     text-decoration: none;
-    position: relative;
     white-space: nowrap;
 }
 
@@ -376,6 +374,19 @@ footer {
     border-radius: 16px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     color: #1f2937; /* Gray 800 */
+}
+
+/* Excepciones para ejercicios de posicionamiento - NO aplicar estilos de caja blanca */
+body[class*="page-actividad"] main:has(.caja-fondo-oscuro),
+body[class*="page-actividad"] main:has(.caja-blanca) {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: inherit;
 }
 
 .page-actividad h2 {
@@ -531,9 +542,7 @@ footer {
         font-size: 2.5rem;
     }
 
-    .nav-unidad {
-        position: relative;
-    }
+
 
     .nav-unidad ul {
         justify-content: flex-start;

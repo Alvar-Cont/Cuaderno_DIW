@@ -1,27 +1,4 @@
-header {
-  background: linear-gradient(90deg, #0a120d, #14532d, #0a120d);
-  color: #ffffff;
-  padding: 40px 0;
-  text-align: center;
-  width: 100%;
-}
 
-header a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-h1 {
-  text-align: center;
-  
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
 /* Ejercicio 1 */
 #ej1 p:first-child {
   border-top: 1px solid black;
@@ -517,9 +494,4 @@ th {
   background-color: #4caf50;
   color: white;
 }
-footer {
-    margin-top: auto;
-    text-align: center;
-    font-size: 15px;
-    color: #9ca3af;
-}
+

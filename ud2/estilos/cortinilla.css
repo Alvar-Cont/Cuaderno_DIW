@@ -1,5 +1,7 @@
 .contenedor {
-    height: 99vh;
+    height: 70vh;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +14,8 @@
 
 .navidad {
     position: absolute;
+    inset: 0;
+    z-index: 3;
     background: linear-gradient(135deg, #b40000, #ff3b3b, #ffef9f, #0b8b00, #005f00);
     top: 0;
     color: #000000;
@@ -19,11 +23,14 @@
     font-family: Oswald, sans-serif;
     transition: transform 2.5s ease, opacity 2.5s ease;
     opacity: 0;
-    z-index: 1;
+    padding: 2rem;
+    text-align: center;
+    pointer-events: none;
+    transform: translateY(-110%);
 }
 
 .boton {
-    display: none;
+    display: inline-block;
 }
 
 .label {
@@ -34,10 +41,18 @@
     font-size: 1em;
     font-family: Oswald, sans-serif;
     cursor: pointer;
+    position: relative;
+    z-index: 5;
 }
 
 .label:hover {
     color: #000000;
+}
+
+input#empezar{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
 #empezar:checked ~ .contenedor {
@@ -50,12 +65,14 @@
     transform: translateY(0);
     opacity: 1;
     display: flex;
-    height: 50%;
-    width: 99%;
+    height: 100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    pointer-events: auto;
 }
+
 header {
   background: linear-gradient(90deg, #0a120d, #14532d, #0a120d);
   color: #ffffff;
@@ -78,4 +95,14 @@ h1 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
+}
+
+body.page-actividad main{
+    position: relative;
+    min-height: calc(100vh - 220px);
+    padding: 2rem 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }

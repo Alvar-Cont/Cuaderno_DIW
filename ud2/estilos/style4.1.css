@@ -1,29 +1,41 @@
-body{
-    background-color: rgb(197, 197, 197);
-    
-}
-
+/* Restored base styles */
 .caja-gris-fijo{
     height: 100px;
-    width: 1960px;
+    width: 100%;
     background-color: rgb(46, 46, 58);
     position: fixed;
-    top: 820px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     z-index: 0;
 }
 
-.caja-blanca{
+/* Layout específico Actividad 4.1 */
+.act4-1 main.lienzo-posicion{
+    width: 1200px;
+    height: 700px;
+    margin: 2rem auto 6rem;
+    padding-top: 40px;
+    background: #e3e3e3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Caja base donde se colocan las capas */
+.act4-1 .caja-blanca{
     height: 500px;
     width: 1000px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    top: 100px;
-    left: 450px;
+    position: relative;
+    margin: 0;
     z-index: 10;
 }
 
-.caja-naranja{
+/* Capas internas absolutas */
+.act4-1 .caja-naranja{
     height: 400px;
     width: 900px;
     background-color: rgba(255, 165, 0, 0.50);
@@ -33,7 +45,7 @@ body{
     z-index: 20;
 }
 
-.caja-rosa{
+.act4-1 .caja-rosa{
     border: 2px dashed purple;
     border-collapse: collapse;
     height: 100px;
@@ -45,17 +57,18 @@ body{
     z-index: 30;
 }
 
-.caja-azul{
+.act4-1 .caja-azul{
     border: 1px solid blue;
     height: 499px;
     width: 149px;
     background-color: rgba(0, 166, 255, 0.5);
     position: absolute;
     left: 850px;
+    top: 0;
     z-index: 40;
 }
 
-.caja-roja{
+.act4-1 .caja-roja{
     text-align: center;
     padding-top: 10px;
     height: 30px;
@@ -68,7 +81,7 @@ body{
     z-index: 40;
 }
 
-.caja-gris-base{
+.act4-1 .caja-gris-base{
     border-top: 1px solid red;
     height: 100px;
     width: 1000px;
@@ -78,33 +91,10 @@ body{
     left: 0px;
     z-index: 10;
 }
-footer {
-    margin-top: auto;
-    text-align: center;
-    font-size: 15px;
-    color: #9ca3af;
-}
 
-header {
-  background: linear-gradient(90deg, #0a120d, #14532d, #0a120d);
-  color: #ffffff;
-  padding: 40px 0;
+/* Ajuste de título dentro de la actividad */
+.act4-1 h1 {
   text-align: center;
-  width: 100%;
-}
-
-header a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-header a:hover {
-  text-decoration: underline;
-}
-h1 {
-  text-align: center;
-  
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
