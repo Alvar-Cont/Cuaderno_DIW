@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <title>Práctica 1 - Tailwind</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../../../global.css">
+    <link rel="stylesheet" href="output.css"/>
+</head>
+<body class="flex flex-col min-h-screen">
+<header class="p-4 shadow-md">
+    <h1 class="text-2xl font-bold text-center text-slate-200">Práctica 1 - Tailwind</h1>
+</header>
+<nav class="nav-unidad">
+    <ul class="card-grid">
+        <li><a href="../../index.html" class="card-link">Indice UD5</a></li>
+        <li><a href="index.html" class="card-link">Práctica 1 - Colores y
+            Fondos</a>
+        </li>
+        <li><a href="../../ejercicio2-tailwind/src/index.html" class="card-link">Ejercicio 2
+            -
+            Tipografía</a></li>
+        <li><a href="../../Practica3-Tailwind/src/index.html" class="card-link">Práctica 3 -
+            Elementos de caja</a></li>
+    </ul>
+</nav>
+<main class="flex-grow p-10 bg-gray-100 text-slate-800 rounded-xl m-4">
+    <div class="p-6 rounded-lg text-white text-center cursor-pointer mb-5 bg-gray-800 hover:bg-gray-900">
+        <h2 class="text-2xl font-bold">MI PRIMER DASHBOARD VISUAL</h2>
+    </div>
+
+    <div class="flex gap-5">
+        <button class="p-4 rounded-full text-white font-bold w-1/2 bg-red-500/50 active:bg-red-500 ">
+            BOTÓN DE PÁNICO
+        </button>
+
+        <div class="p-4 rounded-lg text-white w-1/2 text-center bg-[#4F46E5]">
+            ZONA VIP (HEX)
+        </div>
+    </div>
+
+    <div
+            class="h-60 rounded-xl my-5 flex items-center justify-center text-white text-3xl font-black bg-center bg-cover"
+            style="background-image: url('banner.png');"
+    >
+        BANNER CON IMAGEN
+    </div>
+
+    <div
+            class="h-32 rounded-xl flex items-center justify-center text-white font-bold bg-gradient-to-r from-blue-500 to-green-500"
+    >
+        DEGRADADO AZUL A VERDE
+    </div>
+</main>
+<div class="boton">
+    <a href="../../index.html">Volver al indice UD5</a>
+</div>
+<footer>
+    <p>Hecho por: Álvaro Contreras, Javier Fernández y Juan Carlos Ballesta</p>
+</footer>
+</body>
+</html>
