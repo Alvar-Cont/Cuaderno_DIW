@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo guiado canvas</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<body class="page-actividad">
+    <header>
+        <h1>Ejemplo guiado canvas</h1>
+    </header>
+    <nav class="nav-unidad">
+        <ul>
+            <li><a href="index.html">Indice UD4</a></li>
+            <li><a href="canvas/ej1.html">Canvas - Ejercicio 1</a></li>
+            <li><a href="canvas/ej2.html">Canvas - Ejercicio 2</a></li>
+            <li><a href="canvas/ej3.html">Canvas - Ejercicio 3</a></li>
+            <li><a href="canvas/ej4.html">Canvas - Ejercicio 4</a></li>
+            <li><a href="canvas/ej5.html">Canvas - Ejercicio 5</a></li>
+        </ul>
+    </nav>
+    <main>
+        <canvas id="lienzo" width="500" height="300" style="border:1px solid blue;"></canvas>
+
+        <script>
+            // CONFIGURACION
+            var hoja = document.getElementById("lienzo");
+            var dibujo = hoja.getContext("2d");
+
+            // CIELO
+            dibujo.fillStyle = "#AEEEEE";
+            dibujo.fillRect(0, 0, 500, 200);
+
+            // MAR
+            dibujo.fillStyle = "blue";
+            dibujo.fillRect(0, 200, 500, 100);
+
+            // SOL
+            dibujo.beginPath();
+            dibujo.arc(300, 80, 40, 0, 2 * Math.PI);
+            dibujo.fillStyle = "yellow";
+            dibujo.fill();
+
+            // ISLA
+            dibujo.beginPath();
+            dibujo.arc(120, 220, 40, 0, 2 * Math.PI);
+            dibujo.fillStyle = "green";
+            dibujo.fill();
+
+            // BARCO
+            dibujo.fillStyle = "brown";
+            dibujo.fillRect(330, 210, 60, 10);
+
+            // MASTIL
+            dibujo.beginPath();
+            dibujo.moveTo(360, 210);
+            dibujo.lineTo(360, 150);
+            dibujo.stroke();
+
+            // VELA
+            dibujo.beginPath();
+            dibujo.moveTo(360, 160);
+            dibujo.lineTo(390, 200);
+            dibujo.lineTo(360, 200);
+            dibujo.fillStyle = "orange";
+            dibujo.fill();
+        </script>
+    </main>
+    <div class="boton">
+        <a href="index.html">Volver al indice UD4</a>
+    </div>
+    <footer>
+        <p>Hecho por: Alvaro Contreras, Javier Fernandez y Juan Carlos Ballesta</p>
+    </footer>
+</body>
+
+</html>

@@ -1,62 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 3</title>
+    <title>Canvas - Ejercicio 3</title>
+    <link rel="stylesheet" href="../../global.css">
 </head>
-<body>
+<body class="page-actividad">
+<header>
+    <h1>Canvas - Ejercicio 3</h1>
+</header>
+<nav class="nav-unidad">
+    <ul>
+        <li><a href="../index.html">Indice UD4</a></li>
+        <li><a href="ej1.html">Ejercicio 1</a></li>
+        <li><a href="ej2.html">Ejercicio 2</a></li>
+        <li><a href="ej3.html">Ejercicio 3</a></li>
+        <li><a href="ej4.html">Ejercicio 4</a></li>
+        <li><a href="ej5.html">Ejercicio 5</a></li>
+    </ul>
+</nav>
+<main>
+    <canvas id="lienzo" width="500" height="300"></canvas>
 
-<canvas id="lienzo" width="500" height="300"></canvas>
+    <script>
+        let hoja = document.getElementById("lienzo");
+        let dibujo = hoja.getContext("2d");
 
-<script>
-    let hoja = document.getElementById("lienzo");
-    let dibujo = hoja.getContext("2d");
+        dibujo.lineWidth = 4;
 
-    dibujo.lineWidth = 4;
+        // Linea roja
+        dibujo.beginPath();
+        dibujo.strokeStyle = "red";
+        dibujo.moveTo(100, 40);
+        dibujo.lineTo(100, 220);
+        dibujo.stroke();
 
-    // Linea roja
-    dibujo.beginPath();
-    dibujo.strokeStyle = "red";
-    dibujo.moveTo(100, 40);
-    dibujo.lineTo(100, 220);
-    dibujo.stroke();
+        // Lineas verdes
+        dibujo.beginPath();
+        dibujo.strokeStyle = "green";
 
-    // Lineas verdes
-    dibujo.beginPath();
-    dibujo.strokeStyle = "green";
+        dibujo.moveTo(125, 40);
+        dibujo.lineTo(125, 220);
 
-    dibujo.moveTo(125, 40);
-    dibujo.lineTo(125, 220);
+        dibujo.moveTo(150, 40);
+        dibujo.lineTo(150, 220);
 
-    dibujo.moveTo(150, 40);
-    dibujo.lineTo(150, 220);
+        dibujo.moveTo(175, 40);
+        dibujo.lineTo(175, 220);
 
-    dibujo.moveTo(175, 40);
-    dibujo.lineTo(175, 220);
+        dibujo.stroke();
 
-    dibujo.stroke();
+        // Conos azules
 
-    // Conos azules
-    
-    dibujo.beginPath();
-    dibujo.strokeStyle = "blue";
-    dibujo.moveTo(220, 100);
-    dibujo.lineTo(250, 40);
-    dibujo.lineTo(280, 100);
-    dibujo.stroke();
+        dibujo.beginPath();
+        dibujo.strokeStyle = "blue";
+        dibujo.moveTo(220, 100);
+        dibujo.lineTo(250, 40);
+        dibujo.lineTo(280, 100);
+        dibujo.stroke();
 
-    dibujo.beginPath();
-    dibujo.moveTo(220, 160);
-    dibujo.lineTo(250, 100);
-    dibujo.lineTo(280, 160);
-    dibujo.stroke();
+        dibujo.beginPath();
+        dibujo.moveTo(220, 160);
+        dibujo.lineTo(250, 100);
+        dibujo.lineTo(280, 160);
+        dibujo.stroke();
 
-    dibujo.beginPath();
-    dibujo.moveTo(220, 220);
-    dibujo.lineTo(250, 160);
-    dibujo.lineTo(280, 220);
-    dibujo.stroke();
-</script>
-
+        dibujo.beginPath();
+        dibujo.moveTo(220, 220);
+        dibujo.lineTo(250, 160);
+        dibujo.lineTo(280, 220);
+        dibujo.stroke();
+    </script>
+</main>
+<div class="boton">
+    <a href="../index.html">Volver al indice UD4</a>
+</div>
+<footer>
+    <p>Hecho por: Álvaro Contreras, Javier Fernández y Juan Carlos Ballesta</p>
+</footer>
 </body>
 </html>
