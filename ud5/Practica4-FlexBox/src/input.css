@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@layer components {
+	.fondo-pagina {
+		@apply bg-gray-200;
+	}
+
+	.caja-cabecera {
+		@apply p-3 relative;
+	}
+
+	.barra-panel {
+		@apply flex rounded-2xl bg-white p-5 gap-3 items-center;
+	}
+
+	.icono-panel {
+		@apply bg-indigo-700 rounded-lg w-10 h-10;
+	}
+
+	.titulo-panel {
+		@apply font-bold text-xl;
+	}
+
+	.circulo-usuario {
+		@apply bg-gray-300 rounded-full h-10 w-10 absolute top-8 right-8;
+	}
+
+	.contenido {
+		@apply flex;
+	}
+
+	.menu-lateral {
+		@apply mx-3 rounded-2xl flex flex-col gap-5 mb-5 bg-white p-5 w-20 items-center h-200;
+	}
+
+	.icono-menu-rojo {
+		@apply bg-red-500 rounded-lg w-10 h-10;
+	}
+
+	.icono-menu-verde {
+		@apply bg-green-700 rounded-lg w-10 h-10;
+	}
+
+	.zona-principal {
+		@apply w-full;
+	}
+
+	.fila-cards {
+		@apply flex gap-3;
+	}
+
+	.card-ventas {
+		@apply bg-blue-500 w-1/2 h-32 text-white rounded-2xl justify-center p-6;
+	}
+
+	.card-usuarios {
+		@apply bg-green-400 w-1/2 h-32 text-white rounded-2xl justify-center p-6;
+	}
+
+	.texto-card {
+		@apply text-lg;
+	}
+
+	.numero-card {
+		@apply font-bold text-3xl;
+	}
+
+	.caja-grafico {
+		@apply border border-dotted bg-white p-5 items-center mt-4 rounded-2xl w-full h-165;
+	}
+
+	.titulo-grafico {
+		@apply font-bold text-xl text-gray-700;
+	}
+
+	.fila-barras {
+		@apply flex gap-35 justify-center items-end h-145 mt-4;
+	}
+
+	.columna-mes {
+		@apply flex flex-col items-center;
+	}
+
+	.barra-enero {
+		@apply bg-blue-400 w-20 h-70 rounded-t-2xl;
+	}
+
+	.barra-febrero {
+		@apply bg-blue-600 w-20 h-110 rounded-t-2xl;
+	}
+
+	.barra-marzo {
+		@apply bg-indigo-400 w-20 h-50 rounded-t-2xl;
+	}
+
+	.barra-abril {
+		@apply bg-indigo-600 w-20 h-130 rounded-t-2xl;
+	}
+
+	.barra-mayo {
+		@apply bg-purple-400 w-20 h-90 rounded-t-2xl;
+	}
+
+	.barra-junio {
+		@apply bg-purple-600 w-20 h-110 rounded-t-2xl;
+	}
+}
