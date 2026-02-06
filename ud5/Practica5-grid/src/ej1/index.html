@@ -4,11 +4,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../../../global.css">
   <link href="../output.css" rel="stylesheet" />
   <title>Práctica 5 - Grid -1</title>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
+<header class="p-4 shadow-md">
+    <h1 class="text-2xl font-bold text-center text-slate-200">Práctica 5 - Grid - Ejercicio 1</h1>
+</header>
+<nav class="nav-unidad">
+    <ul class="card-grid">
+        <li><a href="../../../index.html" class="card-link">Indice UD5</a></li>
+        <li><a href="../../../Practica1-Coloresyfondos/src/index.html" class="card-link">Práctica 1 - Colores y Fondos</a>
+        </li>
+        <li><a href="../../../ejercicio2-tailwind/src/index.html" class="card-link">Ejercicio 2 - Tipografía</a></li>
+        <li><a href="../../../Practica3-Tailwind/src/index.html" class="card-link">Práctica 3 - Elementos de caja</a></li>
+        <li><a href="../../../Practica4-FlexBox/src/ejercicio4.html" class="card-link">Práctica 4 - FlexBox</a></li>
+    </ul>
+</nav>
+<main class="flex-grow flex items-center justify-center p-10">
   <div class="grid grid-cols-4 grid-rows-4 h-screen gap-2 justify-items-center items-center m-2">
     <div class="rounded-lg w-full h-full col-span-4 bg-blue-700 text-white flex flex-col justify-center items-center">Header</div>
     <div class="rounded-lg w-full h-full row-span-2 bg-blue-900  text-white text-center flex flex-col justify-center ">Sidebar</div>
@@ -16,6 +31,13 @@
       Main Content</div>
     <div class="rounded-lg w-full h-full col-span-4 bg-blue-500 text-white text-center flex flex-col justify-center ">Footer</div>
   </div>
+</main>
+<div class="boton">
+    <a href="../../../index.html">Volver al indice UD5</a>
+</div>
+<footer>
+    <p>Hecho por: Álvaro Contreras, Javier Fernández y Juan Carlos Ballesta</p>
+</footer>
 </body>
 
 </html>
